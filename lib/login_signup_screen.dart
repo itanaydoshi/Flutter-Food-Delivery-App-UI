@@ -146,7 +146,7 @@ class LoginSignup extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        PhoneVerification(isPasswordReset: false),
+                        const PhoneVerification(isPasswordReset: false),
                   ),
                 );
               }, Colors.orange, Colors.white, Icons.person_add),
