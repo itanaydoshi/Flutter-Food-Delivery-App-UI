@@ -59,7 +59,6 @@ class _BottomBarState extends State<BottomBar> {
               'User',
               1,
             ),
-            
             _buildBottomNavigationBarItem(
               Icons.local_offer_outlined,
               'Offers',
@@ -84,9 +83,7 @@ class _BottomBarState extends State<BottomBar> {
         child: Icon(
           icon,
           size: 25,
-          color: _selectedIndex == index
-              ? Colors.orange
-              : Colors.black, // Change color when selected
+          color: _selectedIndex == index ? Colors.orange : Colors.black,
         ),
       ),
     );

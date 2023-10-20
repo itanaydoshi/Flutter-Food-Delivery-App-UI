@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/widgets/bottombar.dart';
 import 'package:food_delivery_app/widgets/categories.dart';
 import 'package:food_delivery_app/widgets/product_card.dart';
 
@@ -89,22 +88,16 @@ class HomeScreen extends StatelessWidget {
               child: LayoutBuilder(
                 builder: (context, constraints) {
                   return GridView.builder(
-                    padding: const EdgeInsets.all(8.0),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 0.75, // Adjust as needed
-                      mainAxisSpacing: 8, // Add spacing between rows
-                      crossAxisSpacing: 8, // Add spacing between columns
                     ),
                     itemCount: 10,
                     itemBuilder: (context, index) {
-                      return const ProductCard(
-                        title:
-                            "Special Italian Breakfast with a Very Long Title to Test Text Overflow",
-                        imagePath: 'assets/images/img1.jpg',
-                        price: '\$100',
-                      );
+                      return ProductCard(
+                          title: "Special Italian Breakfast",
+                          imagePath: 'assets/images/img1.jpg',
+                          price: '\$100');
                     },
                   );
                 },
@@ -113,10 +106,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBar(
-        onTabTapped: (int) {},
-        onTabTappedList: [],
-      ),
     );
   }
 }
+
