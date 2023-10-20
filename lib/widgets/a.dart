@@ -94,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     itemCount: 10,
                     itemBuilder: (context, index) {
-                      return ProductCard(
+                      return const ProductCard(
                           title: "Special Italian Breakfast",
                           imagePath: 'assets/images/img1.jpg',
                           price: '\$100');
@@ -109,4 +109,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
