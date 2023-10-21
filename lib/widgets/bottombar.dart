@@ -29,22 +29,22 @@ class _BottomBarState extends State<BottomBar> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(30.0),
-          topRight: Radius.circular(30.0),
+          topLeft: Radius.circular(25.0),
+          topRight: Radius.circular(25.0),
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withOpacity(0.2),
             blurRadius: 10.0,
-            spreadRadius: 1.0,
-            offset: const Offset(0, -2),
+            spreadRadius: 0.1,
+            offset: const Offset(-1, -1),
           ),
         ],
       ),
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width * 0.1,
-          vertical: 10,
+          horizontal: MediaQuery.of(context).size.width * 0.08,
+          vertical: 5,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,18 +55,18 @@ class _BottomBarState extends State<BottomBar> {
               0,
             ),
             _buildBottomNavigationBarItem(
-              Icons.person_outlined,
-              'User',
+              Icons.local_offer_outlined,
+              'Offers',
               1,
             ),
             _buildBottomNavigationBarItem(
-              Icons.local_offer_outlined,
-              'Offers',
+              Icons.notifications_none_outlined,
+              'Notifications',
               2,
             ),
             _buildBottomNavigationBarItem(
-              Icons.notifications,
-              'Wechat',
+              Icons.person_outlined,
+              'Account',
               3,
             ),
           ],
@@ -82,8 +82,8 @@ class _BottomBarState extends State<BottomBar> {
         padding: const EdgeInsets.all(8.0),
         child: Icon(
           icon,
-          size: 25,
-          color: _selectedIndex == index ? Colors.orange : Colors.black,
+          size: 20,
+          color: _selectedIndex == index ? Colors.orange : Colors.blueGrey,
         ),
       ),
     );

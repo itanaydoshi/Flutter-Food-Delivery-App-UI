@@ -99,7 +99,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     itemCount: 10,
                     itemBuilder: (context, index) {
-                      return ProductCard(
+                      return const ProductCard(
                         title:
                             "Special Italian Breakfast with a Very Long Title to Test Text Overflow",
                         imagePath: 'assets/images/img1.jpg',
@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomBar(
         onTabTapped: (int) {},
-        onTabTappedList: [],
+        onTabTappedList: const [],
       ),
     );
   }
