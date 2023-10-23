@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:food_delivery_app/screens/2.login_signup_screen.dart';
+
 import 'package:food_delivery_app/screens/4.phone_varificarion_screen.dart';
 import 'package:food_delivery_app/widgets/custom_appbar.dart';
 
