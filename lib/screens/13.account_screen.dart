@@ -8,6 +8,7 @@ class Account extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(243, 244, 246, 1),
       appBar: const CustomAppBar(title: 'Account', icon: Icons.arrow_back),
       body: Padding(
         padding: const EdgeInsets.all(15.0),

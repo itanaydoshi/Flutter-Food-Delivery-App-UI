@@ -48,10 +48,11 @@ class _TimeAndDateState extends State<TimeAndDate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: const CustomAppBar(title: 'Time and Date', icon: Icons.arrow_back),
+      backgroundColor: const Color.fromRGBO(243, 244, 246, 1),
+      appBar:
+          const CustomAppBar(title: 'Time and Date', icon: Icons.arrow_back),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         child: Column(
           children: [
             const Align(
@@ -65,18 +66,24 @@ class _TimeAndDateState extends State<TimeAndDate> {
               ),
             ),
             const SizedBox(height: 10),
-            TableCalendar(
-              rowHeight: 40,
-              headerStyle: const HeaderStyle(
-                formatButtonVisible: false,
-                titleCentered: true,
+            Container(
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TableCalendar(
+                  rowHeight: 40,
+                  headerStyle: const HeaderStyle(
+                    formatButtonVisible: false,
+                    titleCentered: true,
+                  ),
+                  availableGestures: AvailableGestures.all,
+                  selectedDayPredicate: (day) => isSameDay(day, today),
+                  focusedDay: today,
+                  firstDay: DateTime.utc(2010, 10, 21),
+                  lastDay: DateTime.utc(2030, 3, 14),
+                  onDaySelected: _onDaySelected,
+                ),
               ),
-              availableGestures: AvailableGestures.all,
-              selectedDayPredicate: (day) => isSameDay(day, today),
-              focusedDay: today,
-              firstDay: DateTime.utc(2010, 10, 21),
-              lastDay: DateTime.utc(2030, 3, 14),
-              onDaySelected: _onDaySelected,
             ),
             const SizedBox(height: 30),
             const Align(
@@ -89,11 +96,41 @@ class _TimeAndDateState extends State<TimeAndDate> {
                 ),
               ),
             ),
-            const SizedBox(height: 80),
+            const SizedBox(height: 20),
+            Container(
+              height: 45,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Special Italian Breakfast',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.keyboard_arrow_down,
+                        size: 20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 40),
             _buildElevatedButton(
-              'Submit',
+              'Confirm',
               () {},
-              Colors.orange,
+              const Color.fromARGB(255, 255, 102, 0),
               Colors.white,
             ),
           ],

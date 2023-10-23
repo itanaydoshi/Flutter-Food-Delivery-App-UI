@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/screens/phone_varificarion_screen.dart';
+import 'package:food_delivery_app/screens/4.phone_varificarion_screen.dart';
 
 
 class ChangePassword extends StatefulWidget {
@@ -77,7 +77,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                     const Icon(
                       Icons.lock,
                       size: 80,
-                      color: Colors.orange,
+                      color: Color.fromARGB(255, 255, 102, 0),
                     ),
                     const SizedBox(height: 12),
                     const Text(
@@ -134,7 +134,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                         });
                       },
                       checkColor: Colors.white,
-                      activeColor: Colors.orange,
+                      activeColor: const Color.fromARGB(255, 255, 102, 0),
                     ),
                     const Text(
                       'Remember me',
@@ -149,7 +149,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 _buildElevatedButton(
                   'Change Password',
                   () {},
-                  Colors.orange,
+                  Color.fromARGB(255, 255, 102, 0),
                   Colors.white,
                 ),
                 const SizedBox(height: 20),

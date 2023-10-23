@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/screens/home_screen.dart';
-import 'package:food_delivery_app/screens/login_signup_screen.dart';
+import 'package:food_delivery_app/screens/7.home_screen.dart';
+import 'package:food_delivery_app/screens/2.login_signup_screen.dart';
 
 class SelectLocation extends StatefulWidget {
   const SelectLocation({Key? key}) : super(key: key);
@@ -42,7 +42,7 @@ class _SelectLocationState extends State<SelectLocation> {
               onPressed: onPressed,
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
-                backgroundColor: Colors.orange,
+                backgroundColor: const Color.fromARGB(255, 255, 102, 0),
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
@@ -91,7 +91,7 @@ class _SelectLocationState extends State<SelectLocation> {
                 const Icon(
                   Icons.location_pin,
                   size: 100,
-                  color: Colors.orange,
+                  color: Color.fromARGB(255, 255, 102, 0),
                 ),
                 const SizedBox(height: 25),
                 const Text(
@@ -184,7 +184,7 @@ class _SelectLocationState extends State<SelectLocation> {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
-                      color: Colors.orange,
+                      color: Color.fromARGB(255, 255, 102, 0),
                     ),
                   ),
                 ),

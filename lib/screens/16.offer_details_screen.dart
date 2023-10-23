@@ -249,7 +249,7 @@ class OfferScreen extends StatelessWidget {
               _buildElevatedButton(
                 'Get Code Now',
                 () {},
-                Colors.orange,
+                const Color.fromARGB(255, 255, 102, 0),
                 Colors.white,
               ),
             ],

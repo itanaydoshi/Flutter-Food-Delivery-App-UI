@@ -33,7 +33,6 @@ class ProductCard extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                // height: MediaQuery.of(context).size.height * 0.6, // 60% of the screen height
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(imagePath),
@@ -45,13 +44,11 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
               Container(
-                // height: MediaQuery.of(context).size.height * 0.4, // 40% of the screen height
                 margin: const EdgeInsets.all(10),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
                           child: Text(
@@ -66,7 +63,7 @@ class ProductCard extends StatelessWidget {
                         IconButton(
                           icon: const Icon(
                             Icons.favorite_border,
-                            color: Colors.orange,
+                            color: Color.fromARGB(255, 255, 102, 0),
                             size: 16,
                           ),
                           onPressed: () {},
@@ -79,7 +76,7 @@ class ProductCard extends StatelessWidget {
                         IconButton(
                           icon: const Icon(
                             Icons.shopping_cart,
-                            color: Colors.orange,
+                            color: Color.fromARGB(255, 255, 102, 0),
                             size: 16,
                           ),
                           onPressed: () {},
@@ -89,7 +86,7 @@ class ProductCard extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: Colors.orange,
+                            color: Color.fromARGB(255, 255, 102, 0),
                           ),
                         ),
                       ],

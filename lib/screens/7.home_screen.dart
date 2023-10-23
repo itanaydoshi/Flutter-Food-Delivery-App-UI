@@ -47,11 +47,14 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            const Text(
-              'Categories',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Categories',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             const SizedBox(height: 10),
@@ -77,11 +80,14 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 30),
-            const Text(
-              'Result for Breakfast',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Result for Breakfast',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             const SizedBox(height: 10),
@@ -94,7 +100,7 @@ class HomeScreen extends StatelessWidget {
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 0.75, // Adjust as needed
-                      mainAxisSpacing: 8, // Add spacing between rows
+                      mainAxisSpacing: 0, // Add spacing between rows
                       crossAxisSpacing: 8, // Add spacing between columns
                     ),
                     itemCount: 10,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/screens/account_screen.dart';
+import 'package:food_delivery_app/widgets/a.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Food Delivery',
-      theme: ThemeData(),
-      home:  Account(),
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+      ),
+      home: CounterScreen(),
     );
   }
 }

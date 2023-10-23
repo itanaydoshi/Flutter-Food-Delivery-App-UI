@@ -83,7 +83,7 @@ class _BottomBarState extends State<BottomBar> {
         child: Icon(
           icon,
           size: 20,
-          color: _selectedIndex == index ? Colors.orange : Colors.blueGrey,
+          color: _selectedIndex == index ? const Color.fromARGB(255, 255, 102, 0) : Colors.blueGrey,
         ),
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/screens/change_password_screen.dart';
-import 'package:food_delivery_app/screens/forget_password_screen.dart';
-import 'package:food_delivery_app/screens/select_location_screen.dart';
+import 'package:food_delivery_app/screens/5.change_password_screen.dart';
+import 'package:food_delivery_app/screens/3.forget_password_screen.dart';
+import 'package:food_delivery_app/screens/6.select_location_screen.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
 
@@ -72,7 +72,7 @@ class PhoneVerification extends StatelessWidget {
                 const Icon(
                   Icons.verified,
                   size: 80,
-                  color: Colors.orange,
+                  color: Color.fromARGB(255, 255, 102, 0),
                 ),
                 const SizedBox(height: 20),
                 const Text(
@@ -143,7 +143,7 @@ class PhoneVerification extends StatelessWidget {
                             );
                           }
                         },
-                        backgroundColor: Colors.orange,
+                        backgroundColor: const Color.fromARGB(255, 255, 102, 0),
                         textColor: Colors.white,
                       ),
                     ],

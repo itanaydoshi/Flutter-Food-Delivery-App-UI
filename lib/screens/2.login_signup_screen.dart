@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/screens/forget_password_screen.dart';
-import 'package:food_delivery_app/screens/home_screen.dart';
-import 'package:food_delivery_app/screens/phone_varificarion_screen.dart';
+import 'package:food_delivery_app/screens/3.forget_password_screen.dart';
+import 'package:food_delivery_app/screens/4.phone_varificarion_screen.dart';
+import 'package:food_delivery_app/screens/7.home_screen.dart';
 
 class LoginSignup extends StatelessWidget {
   const LoginSignup({super.key});
@@ -11,15 +11,14 @@ class LoginSignup extends StatelessWidget {
     Function() onPressed,
     Color buttonColor,
     Color textColor,
-    IconData iconData,
   ) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: buttonColor,
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(5.0),
         ),
       ),
       child: Row(
@@ -27,7 +26,7 @@ class LoginSignup extends StatelessWidget {
         children: [
           Text(
             text,
-            style: TextStyle(fontSize: 16, color: textColor),
+            style: TextStyle(fontSize: 12, color: textColor),
           ),
         ],
       ),
@@ -55,7 +54,7 @@ class LoginSignup extends StatelessWidget {
                     'Just click your own helper',
                     style: TextStyle(
                       fontStyle: FontStyle.italic,
-                      fontSize: 18,
+                      fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
@@ -66,14 +65,19 @@ class LoginSignup extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildElevatedButton('Login', () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ),
-                    );
-                  }, Colors.orange, Colors.white, Icons.login),
+                  _buildElevatedButton(
+                    'Login',
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                      );
+                    },
+                    const Color.fromARGB(255, 255, 102, 0),
+                    Colors.white,
+                  ),
                   const SizedBox(width: 10),
                   _buildElevatedButton('Sign Up', () {
                     Navigator.push(
@@ -82,7 +86,7 @@ class LoginSignup extends StatelessWidget {
                         builder: (context) => const LoginSignup(),
                       ),
                     );
-                  }, Colors.white, Colors.black, Icons.person_add),
+                  }, Colors.white, Colors.black),
                 ],
               ),
               const SizedBox(height: 20),
@@ -91,7 +95,7 @@ class LoginSignup extends StatelessWidget {
                 child: Text(
                   'Please sign up to create an account',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),
@@ -101,7 +105,7 @@ class LoginSignup extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(
                   hintText: 'Email',
-                  prefixIcon: const Icon(Icons.email),
+                  hintStyle: const TextStyle(fontSize: 12),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -112,7 +116,7 @@ class LoginSignup extends StatelessWidget {
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Password',
-                  prefixIcon: const Icon(Icons.lock),
+                  hintStyle: const TextStyle(fontSize: 12),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -133,23 +137,28 @@ class LoginSignup extends StatelessWidget {
                   child: const Text(
                     'Forgot Password ?',
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 10,
                       fontWeight: FontWeight.bold,
-                      color: Colors.orange,
+                      color: Color.fromARGB(255, 255, 102, 0),
                     ),
                   ),
                 ),
               ),
               const SizedBox(height: 10),
-              _buildElevatedButton('Sign In', () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        const PhoneVerification(isPasswordReset: false),
-                  ),
-                );
-              }, Colors.orange, Colors.white, Icons.person_add),
+              _buildElevatedButton(
+                'Sign In',
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const PhoneVerification(isPasswordReset: false),
+                    ),
+                  );
+                },
+                const Color.fromARGB(255, 255, 102, 0),
+                Colors.white,
+              ),
               const SizedBox(height: 20),
               const Row(
                 children: [
@@ -180,11 +189,59 @@ class LoginSignup extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              _buildElevatedButton('Continue with Google', () {}, Colors.white,
-                  Colors.black, Icons.facebook),
-              const SizedBox(height: 10),
-              _buildElevatedButton('Continue with Facebook', () {},
-                  Colors.white, Colors.black, Icons.facebook),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(
+                      Icons.facebook,
+                      color: Colors.black,
+                      size: 16,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      'Continue with Google',
+                      style: TextStyle(fontSize: 12, color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(
+                      Icons.facebook,
+                      color: Colors.black,
+                      size: 16,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      'Continue with Google',
+                      style: TextStyle(fontSize: 12, color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

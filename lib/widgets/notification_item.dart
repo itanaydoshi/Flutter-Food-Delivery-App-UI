@@ -34,7 +34,7 @@ class NotificationItem extends StatelessWidget {
               children: [
                 Icon(
                   Icons.check_box_outlined,
-                  color: Colors.orange,
+                  color: Color.fromARGB(255, 255, 102, 0),
                   size: 20,
                 ),
               ],
