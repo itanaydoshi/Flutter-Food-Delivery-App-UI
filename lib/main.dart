@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery_app/widgets/a.dart';
+import 'package:food_delivery_app/screens/10.my_cart_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: CounterScreen(),
+      home: const MyCart(),
     );
   }
 }

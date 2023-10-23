@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ProductView extends StatelessWidget {
   const ProductView({super.key});
 
@@ -9,7 +8,7 @@ class ProductView extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(243, 244, 246, 1),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromRGBO(243, 244, 246, 1),
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(
@@ -35,15 +34,30 @@ class ProductView extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                height: 100,
-                decoration: BoxDecoration(
-                  image: const DecorationImage(
-                    image: AssetImage('assets/images/img1.jpg'),
-                    fit: BoxFit.cover,
+              Stack(
+                children: [
+                  Container(
+                    height: 100,
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: AssetImage('assets/images/img1.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(10),
-                ),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.favorite_border,
+                        color: Color.fromARGB(255, 255, 102, 0),
+                        size: 22,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 15),
               const Row(
@@ -58,17 +72,18 @@ class ProductView extends StatelessWidget {
                   Text(
                     '\$ 90',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black54,
-                        fontSize: 14),
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black54,
+                      fontSize: 14,
+                    ),
                   ),
                 ],
               ),
               const SizedBox(height: 10),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     'Reviews 4.5',
                     style: TextStyle(
                       fontSize: 12,
@@ -76,39 +91,27 @@ class ProductView extends StatelessWidget {
                       color: Colors.black54,
                     ),
                   ),
-                  const SizedBox(width: 5),
-                  const Text(
+                  SizedBox(width: 5),
+                  Text(
                     '(89)',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(width: 5),
-                  RatingBar(
-                    rating: 3.7,
-                    ratingCount: 5,
-                    size: 12,
-                  )
+                  SizedBox(width: 5),
+                  RatingBar(rating: 3.7, size: 12),
                 ],
               ),
               const SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildElevatedButton(
-                    'Add to cart',
-                    () {},
-                    const Color.fromARGB(255, 255, 102, 0),
-                    Colors.white,
-                  ),
+                  _buildElevatedButton('Add to cart', () {},
+                      const Color.fromARGB(255, 255, 102, 0), Colors.white),
                   const SizedBox(width: 10),
-                  _buildElevatedButton(
-                    'Buy Now',
-                    () {},
-                    const Color.fromRGBO(245, 239, 222, 1),
-                    Colors.orange,
-                  ),
+                  _buildElevatedButton('Buy Now', () {},
+                      const Color.fromRGBO(245, 239, 222, 1), Colors.orange),
                 ],
               ),
               const SizedBox(height: 20),
@@ -163,14 +166,12 @@ class ProductView extends StatelessWidget {
   }
 }
 
-// ignore: must_be_immutable
 class RatingBar extends StatelessWidget {
   final double rating;
   final double size;
-  int? ratingCount;
 
-  RatingBar(
-      {super.key, required this.rating, this.ratingCount, this.size = 18});
+  const RatingBar({Key? key, required this.rating, this.size = 18})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -194,7 +195,7 @@ class RatingBar extends StatelessWidget {
                 ClipRect(
                   clipper: _Clipper(part: partNumber),
                   child: Icon(Icons.star, color: Colors.grey, size: size),
-                )
+                ),
               ],
             ),
           ),
@@ -213,7 +214,7 @@ class RatingBar extends StatelessWidget {
 
 class _Clipper extends CustomClipper<Rect> {
   final int part;
-  _Clipper({required this.part});
+  const _Clipper({required this.part});
 
   @override
   Rect getClip(Size size) {
@@ -230,11 +231,7 @@ class _Clipper extends CustomClipper<Rect> {
 }
 
 Widget _buildElevatedButton(
-  String text,
-  Function() onPressed,
-  Color buttonColor,
-  Color textColor,
-) {
+    String text, Function() onPressed, Color buttonColor, Color textColor) {
   return ElevatedButton(
     onPressed: onPressed,
     style: ElevatedButton.styleFrom(

@@ -71,6 +71,10 @@ class _TimeAndDateState extends State<TimeAndDate> {
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: TableCalendar(
+                  calendarStyle: const CalendarStyle(
+                    defaultTextStyle: TextStyle(fontSize: 12),
+                    todayTextStyle: TextStyle(fontSize: 12),
+                  ),
                   rowHeight: 40,
                   headerStyle: const HeaderStyle(
                     formatButtonVisible: false,
